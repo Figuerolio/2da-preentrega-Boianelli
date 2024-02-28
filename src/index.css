@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+.navBar {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-family: "Young Serif", serif;
+}
+ul {
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  gap: 3rem;
+  list-style: none;
+  display: flex;
+}
+.logo {
+  border-radius: 60%;
+  height: 3rem;
+  width: 5rem;
+}
