@@ -1,20 +1,33 @@
 import React from "react";
+import { ItemCountContainer } from "../../common";
 import { Link } from "react-router-dom";
+import "./ItemDetailContainer.css";
 
-export const ItemDetail = () => {
+export const ItemDetail = ({ item, onAdd }) => {
   return (
-    <div className="p-5 border border-3 rounded-4">
-      <div className="d-flex justify-content-center">
-        <img src="{img}" alt="" />
+    <div>
+      <div className={"containerItemDetail"}>
+        <div className={"imgContainerDetail"}>
+          <img src={item.img} alt="" />
+        </div>
+
+        <div className={"containerDetail"}>
+          <h2>
+            <span>Nombre:</span> {item.title}
+          </h2>
+          <h3>
+            <span>Descripcion:</span> {item.description}
+          </h3>
+          <h3>
+            <span>Precio:</span> ${item.price}.-
+          </h3>
+        </div>
       </div>
-      <div className="d-flex flex-column">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <ItemCountContainer stock={item.stock} onAdd={onAdd} />
       </div>
 
-      <Link>
+      <Link to={"/"}>
         <button className=" btn btn-white">Atras</button>
       </Link>
     </div>

@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
 export const ItemListContainer = () => {
-  const [category] = useParams();
+  const { category } = useParams();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    setIsLoading(true);
     getProducts().then((resp) => {
       if (category) {
         const productsFilter = resp.filter(

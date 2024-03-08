@@ -1,12 +1,19 @@
-export const ProductCard = ({ img, title, description, price }) => {
+import { Link } from "react-router-dom";
+export const ProductCard = ({ img, title, price, id }) => {
   // const  { titulo, desc, precio } = prop
 
   return (
-    <div style={{ border: "2px solid black" }}>
+    <div>
       <img src={img} alt="" />
-      <h4>{title}</h4>
-      <h3>{description}</h3>
-      <h3>{price}</h3>
+      <div className="infoCard">
+        <h3>{title}</h3>
+        <h3>{price}</h3>
+        <Link to={`/item/${id}`}>
+          <button>
+            <h3>Ver Detalle</h3>
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
