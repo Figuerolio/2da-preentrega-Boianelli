@@ -1,4 +1,4 @@
-export { Cart } from "./cart/Cart";
+export { CartContainer } from "./cart/CartContainer";
 export { CartWidget } from "./cart/CartWidget";
 export * from "./itemCount";
 

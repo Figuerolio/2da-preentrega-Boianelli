@@ -8,13 +8,27 @@
   margin-right: 2rem;
   justify-content: space-around;
 }
+
 .infoCard {
+  margin-left:1rem ;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-img {
+
+.bodyCard{
+  width: 27.8125rem;
+  height: 10.9375rem;
+  display: flex;
+  justify-items: center;
+  align-content: center;
+}
+
+
+.imgArt {
   height: 10rem;
   width: 12rem;
+  border-radius: 20%;
 }

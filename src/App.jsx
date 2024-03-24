@@ -1,22 +1,27 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { NavBar } from "./components/layout/NavBar";
 import { ItemDetailContainer, ItemListContainer } from "./components/pages";
-import { Cart } from "./components/common";
+import { CartContainer } from "./components/common";
 import { Layout } from "./components/layout/Layout";
+import { CartContextProvider } from "./context/CartContext";
+import { CheckOutContainer } from "./components/pages/checkOut/CheckOutContainer";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes element={<Layout />}>
-        <Route>
+    <CartContextProvider>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path="/" element={<ItemListContainer />} />
-          <Route path="/cart" element={Cart} />
+          <Route path="/cart" element={<CartContainer/>} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/checkout" element={<CheckOutContainer />} />
           <Route path="/category/:category" element={<ItemListContainer />} />
         </Route>
+        <Route path="*" element={<h1>404 NOT FOUND</h1>} />
       </Routes>
+      </CartContextProvider>
     </BrowserRouter>
+   
   );
 };
 

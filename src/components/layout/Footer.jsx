@@ -1,9 +1,9 @@
 import React from "react";
-
+import InstagramIcon from '@mui/icons-material/Instagram';
 export const Footer = () => {
   return (
-    <div>
-      <h4>FOOTER</h4>
+    <div className="footer">
+      <InstagramIcon color="primary" sx={{fontSize:40}}/>
     </div>
   );
 };

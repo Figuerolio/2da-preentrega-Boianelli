@@ -1,0 +1,13 @@
+.imgDeteArt{
+    height: 40%;
+    width: 40%;
+    border-radius: 10%;
+}
+.imgContainerDetail{
+    display: flex;
+    justify-content: center;
+}
+.count{
+    display: flex;
+    justify-content: center;
+}

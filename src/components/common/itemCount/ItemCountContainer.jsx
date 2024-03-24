@@ -2,8 +2,8 @@ import { useState } from "react";
 import { ItemCount } from "./ItemCount";
 import Swal from "sweetalert2";
 
-const ItemCountContainer = ({ stock }) => {
-  const [counter, setCounter] = useState(1);
+const ItemCountContainer = ({ stock, onAdd,initial=1}) => {
+  const [counter, setCounter] = useState(initial);
 
   const addOne = () => {
     if (counter < stock) {
@@ -21,7 +21,7 @@ const ItemCountContainer = ({ stock }) => {
     }
   };
 
-  return <ItemCount counter={counter} addOne={addOne} subOne={subOne} />;
+  return <ItemCount counter={counter} addOne={addOne} subOne={subOne}  onAdd={onAdd}/>;
 };
 
 export default ItemCountContainer;
